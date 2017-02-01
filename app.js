@@ -29,9 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/test', test);
+//app.use('/', index);
+//app.use('/users', users);
+//app.use('/test', test);
+
+require('.\routes\router.js')(app);
+
+// listen (start app with node server.js) ======================================
+app.listen(port);
+console.log("App listening on port " + port);
 
 
 // catch 404 and forward to error handler
