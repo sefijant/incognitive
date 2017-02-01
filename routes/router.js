@@ -9,6 +9,8 @@
             controller: 'errCtrl'
         })
         .otherwise({ redirectTo: '/' });
+
+    
 });
 angular.module('myapp', ['webcam']);
 

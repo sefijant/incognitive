@@ -5,8 +5,8 @@ app.controller('ctr', function($scope, $http) {
     $scope.doMagic=function() {
         var req = {
             method: 'POST',
-            url: 'http://incognitive.azurewebsites.net/trump',
-            data: { url: $scope.imgInput }
+            url: 'http://incognitive.azurewebsites.net/trump/check',
+            data: { "url": $scope.imgInput }
         }
         $http(req).then(function(data){$scope.result = data});
     };
