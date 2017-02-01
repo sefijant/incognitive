@@ -1,4 +1,4 @@
-﻿angular.module('route', [], function ($routeProvider, $locationProvider) {
+﻿angular.module('route', ['ngRoute']).config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/process', {
             template: 'process.html',
@@ -10,6 +10,7 @@
         })
         .otherwise({ redirectTo: '/' });
 });
+angular.module('myapp', ['webcam']);
 
 function MainCtrl($scope) {
     $scope.test = "123";
