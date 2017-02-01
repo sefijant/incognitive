@@ -16,7 +16,11 @@
             <div ng-controller="ctr">
                  <h3>Are You Trump?</h3>
                  <br>
-                 <input type="text" class="form-control" ng-model="imgInput">
+                 <div col-md-3>
+                    <input type="text" id="inp" class="form-control" ng-model="imgInput">
+                 </div>
+                 <br>
+                 <button type="button" class="btn btn-primary" ng-click="doMagic">CHECK!!!</button>
             </div>
         </div>
     </body>
