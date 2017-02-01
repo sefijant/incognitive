@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('test.html');
 });
-router.post('/', function(req, res, next) {
+router.post('/check', function(req, res, next) {
     var pid ="";
     request({
         uri: "https://westus.api.cognitive.microsoft.com/face/v1.0/detect",
