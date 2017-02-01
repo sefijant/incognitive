@@ -1,6 +1,6 @@
-﻿var app = angular.module('inco', []);
+﻿var appRouter = angular.module('appRouter', ['ngRoute']);
 
-app.config(['$routeProvider',
+appRouter.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
             when('/process', {
