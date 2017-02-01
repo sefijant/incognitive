@@ -1,7 +1,13 @@
 var app = angular.module('Incognitive', []);
-app.controller('ctr', function($scope) {
+app.controller('ctr', function($scope, $http) {
+    $scope.result = "";
     $scope.imgInput="Enter URL";
     $scope.doMagic=function() {
-        $scope.imgInput = "Clicked";
+        var req = {
+            method: 'POST',
+            url: 'http://incognitive.azurewebsites.net/trump',
+            data: { url: $scope.imgInput }
+        }
+        $http(req).then(function(data){$scope.result = data});
     };
 });
