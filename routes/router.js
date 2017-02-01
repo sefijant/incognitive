@@ -1,4 +1,4 @@
-﻿var appRouter = angular.module('appRouter', []);
+﻿var appRouter = angular.module('appRouter', ['ngRoute']);
 
 appRouter.config(['$routeProvider',
     function ($routeProvider) {
