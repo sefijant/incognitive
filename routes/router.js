@@ -1,11 +1,11 @@
 ﻿angular.module('route', [], function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/process', {
-            template: '/public/process.html',
+            template: 'process.html',
             controller: 'processCtrl'
         })
         .when('/err', {
-            template: '/public/error.html',
+            template: 'error.html',
             controller: 'errCtrl'
         })
         .otherwise({ redirectTo: '/' });
