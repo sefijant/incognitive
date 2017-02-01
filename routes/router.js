@@ -1,17 +1,16 @@
-﻿var app = angular.module('app', ['ngRoute']);
+﻿angular.module('route', [], function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/process', {
+            template: '/public/process.html',
+            controller: 'processCtrl'
+        })
+        .when('/err', {
+            template: '/public/error.html',
+            controller: 'errCtrl'
+        })
+        .otherwise({ redirectTo: '/' });
+});
 
-app.config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider.
-            when('/process', {
-                templateUrl: 'public/process.html',
-                controller: 'processCtrl'
-            }).
-            when('/err', {
-                templateUrl: 'public/error.html',
-                controller: 'errCtrl'
-            }).
-            otherwise({
-                redirectTo: '/index'
-            });
-    }]);
+function MainCtrl($scope) {
+    $scope.test = "123";
+}
