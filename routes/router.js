@@ -12,7 +12,7 @@
 
     
 });
-angular.module('myapp', ['webcam'])
+angular.module('route', ['ngRoute'])
     .controller('mainController', function ($scope) {
         var _video = null,
             patData = null;
