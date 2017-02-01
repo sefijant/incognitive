@@ -9,8 +9,10 @@
             controller: 'errCtrl'
         })
         .otherwise({ redirectTo: '/' });
+
+    angular.module('myapp', ['webcam']);
 });
-angular.module('myapp', ['webcam']);
+
 
 function MainCtrl($scope) {
     $scope.test = "123";
