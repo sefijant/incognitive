@@ -1,4 +1,4 @@
-﻿var appRouter = angular.module('inco', []);
+﻿var appRouter = angular.module('appRouter', []);
 
 appRouter.config(['$routeProvider',
     function ($routeProvider) {
