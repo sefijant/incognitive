@@ -4,7 +4,7 @@
     <title>AngularJS Routing example</title>
 </head>
 
-<body ng-app="appRouter">
+<body ng-app="route" ng-controller="mainCtrl">
 
     <div class="container">
         <div class="row">
@@ -23,13 +23,13 @@
                             <td>1</td>
                             <td>1234</td>
                             <td>15" Samsung Laptop</td>
-                            <td><a href="#process">pro</a></td>
+                            <td><a href="/process">pro</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>5412</td>
                             <td>2TB Seagate Hard drive</td>
-                            <td><a href="#err">Err</a></td>
+                            <td><a href="/err">Err</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -40,7 +40,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <script src="app.js"></script>
 
 </body>
 </html>
