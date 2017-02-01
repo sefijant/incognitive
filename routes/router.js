@@ -12,7 +12,7 @@
 
     
 });
-angular.module('route', ['ngRoute'])
+angular.module('myapp', ['webcam'])
     .controller('mainController', function ($scope) {
         var _video = null,
             patData = null;
@@ -92,7 +92,6 @@ angular.module('route', ['ngRoute'])
             $scope.snapshotData = imgBase64;
         };
     });
-
 function MainCtrl($scope) {
     $scope.test = "123";
 }

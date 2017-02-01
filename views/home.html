@@ -28,17 +28,7 @@
 
             </ul>
         </div>
-        <div>
-            <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
-                <span>Webcam could not be started. Did you give access to it?</span>
-            </div>
-            <webcam channel="channel"
-                    on-streaming="onSuccess()"
-                    on-error="onError(err)"
-                    on-stream="onStream(stream)"></webcam>
-            <button ng-click="makeSnapshot()">take picture</button>
-            <canvas id="snapshot" width="300" height="300"></canvas>
-        </div>
+      
     </nav>
                 <ng-view></ng-view>
 
