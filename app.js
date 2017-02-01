@@ -2,8 +2,10 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+//var Promise = require('bluebird');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var database = require('./config/database');
 var mongoose = require('mongoose');
 
 var index = require('./routes/index');
@@ -12,7 +14,8 @@ var test = require('./routes/testr');
 
 var app = express();
 
-mongoose.connect(database.url);
+mongoose.Promise = require('bluebird');
+mongoose.createConnection(database.url);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +33,6 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/test', test);
 
-mongoose.connect(database.url);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
