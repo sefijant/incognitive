@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Compile Include="routes\webcam.min.js" />
+    <Compile Include="webcam.min.js" />
     <Content Include="package.json" />
     <Compile Include="app.js" />
     <Compile Include="config\database.js" />
