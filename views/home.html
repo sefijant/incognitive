@@ -6,39 +6,17 @@
 </head>
 
 <body ng-app="route" ng-controller="mainCtrl">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Order No.</th>
-                            <th>Details</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1234</td>
-                            <td>15" Samsung Laptop</td>
-                            <td><a href="/trump">pro</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>5412</td>
-                            <td>2TB Seagate Hard drive</td>
-                            <td><a href="/err">Err</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <ng-view></ng-view>
-            </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/trump">trump</a></li>
+                <li><a href="/err">err</a></li>
+                <li><a href="/process">process</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
+                <ng-view></ng-view>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
