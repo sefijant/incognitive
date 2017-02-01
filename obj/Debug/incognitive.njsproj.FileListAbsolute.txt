@@ -1,1 +1,3 @@
 C:\Users\bnaya\Source\Repos\incognitive\obj\Debug\incognitive.njsprojResolveAssemblyReference.cache
+C:\Users\Temp.TEMP-PC.000\Desktop\New folder\obj\Debug\incognitive.njsprojResolveAssemblyReference.cache
+C:\Users\Temp.TEMP-PC.000\Desktop\New folder\bin\Microsoft.NodejsTools.WebRole.dll
