@@ -8,6 +8,6 @@ app.controller('ctr', function($scope, $http) {
             url: 'http://incognitive.azurewebsites.net/trump/check',
             data: { "url": $scope.imgInput }
         }
-        $http(req).then(function(data){$scope.result = data});
+        $http(req).then(function(data){$scope.result = data.data});
     };
 });
