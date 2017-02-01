@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 router.post('/check', function(req, res, next) {
     var pid ="";
     request({
-        uri: "https://westus.api.cognitive.microsoft.com/face/v1.0/detect",
+        url: "https://westus.api.cognitive.microsoft.com/face/v1.0/detect",
         method: "POST",
         headers: {
             'Content-Type': "application/json",
