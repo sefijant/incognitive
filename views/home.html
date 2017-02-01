@@ -4,22 +4,43 @@
     <title>AngularJS Routing example</title>
 </head>
 
-<body ng-app="app">
+<body ng-app="appRouter">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <ul class="nav">
-                    <li><a href="#process"> Process </a></li>
-                    <li><a href="#err"> Err </a></li>
-                </ul>
-            </div>
             <div class="col-md-9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Order No.</th>
+                            <th>Details</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1234</td>
+                            <td>15" Samsung Laptop</td>
+                            <td><a href="#process">pro</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>5412</td>
+                            <td>2TB Seagate Hard drive</td>
+                            <td><a href="#err">Err</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div ng-view></div>
             </div>
         </div>
     </div>
+
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="app.js"></script>
+
 </body>
 </html>
