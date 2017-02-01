@@ -1,3 +1,3 @@
-﻿appRouter.controller('errCtrl', function ($scope) {
+﻿app.controller('errCtrl', function ($scope) {
     $scope.message = "errCtrl";
 });

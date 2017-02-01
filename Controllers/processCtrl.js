@@ -1,3 +1,3 @@
-﻿appRouter.controller('processCtrl', function ($scope) {
+﻿app.controller('processCtrl', function ($scope) {
     $scope.message = "processCtrl";
 });

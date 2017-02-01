@@ -1,6 +1,6 @@
-﻿var appRouter = angular.module('appRouter', ['ngRoute']);
+﻿var app = angular.module('appRouter', ['ngRoute']);
 
-appRouter.config(['$routeProvider',
+app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
             when('/process', {
