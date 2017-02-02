@@ -1,7 +1,7 @@
 var request = require('request');
 
 exports.apiPOST = function(req, res) {
-    var che = req.params;
+    var che = req.params.ur;
   request.post({
     headers: {'Content-Type': "application/json", 'Ocp-Apim-Subscription-Key': "580eb3f9f7f64f9aaf4afb69c25ffd40"},
     url:     'https://westus.api.cognitive.microsoft.com/face/v1.0/detect',
