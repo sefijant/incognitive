@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//module.exports = app;
+module.exports = app;
 
 //// Create a schema
 //var visitorSchema = new mongoose.Schema({
