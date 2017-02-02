@@ -54,3 +54,67 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// Create a schema
+var visitorSchema = new mongoose.Schema({
+    _id: Number,
+    name: String,
+    pid: Number,
+    wanted: Boolean,
+    photos: [{ url: String }],
+    visits: [{
+        date: Date,
+        ea: {
+            anger: Double,
+            contempt: Double,
+            disgust: Double,
+            fear: Double,
+            happiness: Double,
+            natural: Double,
+            sadness: Double,
+            surprise: Double
+        }
+    }],
+    ea: {
+        anger: Double,
+        contempt: Double,
+        disgust: Double,
+        fear: Double,
+        happiness: Double,
+        natural: Double,
+        sadness: Double,
+        surprise: Double
+    }
+});
+// Create a model based on the schema
+var Visitor = mongoose.model('visitor', visitorSchema);
+var visitor = new Visitor({
+    _id: 5,
+    name: "Barak Obama",
+    pid: 123235346,
+    wanted: true,
+    photos: [],
+    visits: [],
+    ea: {
+        anger: 0.003,
+        contempt: 0,
+        disgust: 0,
+        fear: 0,
+        happiness: 0.9,
+        natural: 0,
+        sadness: 0,
+        surprise: 0.008
+    }
+});
+visitor.save(function (err) {
+    if (err)
+        console.log(err);
+    else
+        console.log(visitor);
+});
+
+// Find all data in the Todo collection
+Todo.find(function (err, vistors) {
+    if (err) return console.error(err);
+    console.log(visitors)
+});
