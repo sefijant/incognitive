@@ -43,7 +43,7 @@
 
 </head>
 
-<body style="background-color: burlywood;">
+<body style="background-color: burlywood; text-align: center;">
     <div ng-app="myapp" ng-controller="mainController">
         <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
             <span>Webcam could not be started. Did you give access to it?</span>
@@ -61,9 +61,10 @@
                     on-streaming="onSuccess()"
                     on-error="onError(err)"
                     on-stream="onStream(stream)" style="text-align: center; margin: 1%;"></webcam>
-            <button ng-click="makeSnapshot();">take picture</button>
             <canvas id="snapshot" width="300" height="300"></canvas>
-            <h1>{{result}}</h1>
+        <button ng-click="makeSnapshot();">take picture</button>
+
+
     </div>
 
 
