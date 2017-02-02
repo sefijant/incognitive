@@ -56,13 +56,13 @@
                 </ul>
             </div>
         </nav>
-        <webcam channel="channel"
+        <webcam ng-hide="result != 0" channel="channel"
                 on-streaming="onSuccess()"
                 on-error="onError(err)"
                 on-stream="onStream(stream)" style="text-align: center; margin: 1%;"></webcam>
         <button ng-click="makeSnapshot()">take picture</button>
-        <canvas id="snapshot" width="600" height="600"></canvas>
-      <h1>{{result}}</h1> 
+        <canvas ng-hide="result == 0" id="snapshot" width="600" height="600"></canvas>
+      <h1 ng-hide="result == 0">{{result}}</h1> 
     </div>
 
 
