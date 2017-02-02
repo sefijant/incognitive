@@ -15,7 +15,7 @@ app.controller('ctr', function($scope, $http) {
                 data: { 'bdy' : response }
             })
             .then(function(dt) {
-                $scope.result = dt.data[0];
+                $scope.result = dt.data[0].faceId;
             }, 
             function(dt) { // optional
                 $scope.result = "err2";
@@ -60,7 +60,7 @@ var app2=angular.module('myapp', ['webcam'])
             $scope.$apply(function () {
                 $scope.patOpts.w = _video.width;
                 $scope.patOpts.h = _video.height;
-                //$scope.showDemos = true;
+                $scope.showDemos = true;
             });
         };
 
