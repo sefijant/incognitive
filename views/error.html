@@ -31,6 +31,7 @@
 
 
     <script type="text/javascript" src="https://cdn.rawgit.com/jonashartmann/webcam-directive/master/dist/webcam.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
 
@@ -63,7 +64,7 @@
                     on-stream="onStream(stream)" style="text-align: center; margin: 1%;"></webcam>
             <div  class="col s12">
                 <canvas id="snapshot" width="300" height="300"></canvas>
-                <button class="btn-floating btn-large waves-effect waves-light grey darken-4" ng-click="makeSnapshot();">take picture</button>
+                <button class="btn-floating btn-large waves-effect waves-light grey darken-4" ng-click="makeSnapshot();"><i class="fa fa-camera"></i></button>
             </div>
         
             
