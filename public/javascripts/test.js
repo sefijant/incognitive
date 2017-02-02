@@ -15,7 +15,11 @@ app.controller('ctr', function($scope, $http) {
                 data: { 'bdy' : response }
             })
             .then(function(dt) {
-                $scope.result = dt.data[0].faceId;
+                if(dt.data[0].candidates == []){
+                    $scope.result("You are not Trump");
+                } else {
+                    $scope.result("You are trump. (" + dt.data[0].candidates[0].confidence + "%)")
+                }
             }, 
             function(dt) { // optional
                 $scope.result = "err2";
