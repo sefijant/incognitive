@@ -60,7 +60,7 @@ var app2=angular.module('myapp', ['webcam'])
             $scope.$apply(function () {
                 $scope.patOpts.w = _video.width;
                 $scope.patOpts.h = _video.height;
-                //$scope.showDemos = true;
+                $scope.showDemos = true;
             });
         };
 
