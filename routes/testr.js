@@ -8,22 +8,6 @@ var ctrl = require('../controllers/trump');
 router.get('/', function(req, res, next) {
   res.render('test.html');
 });
-router.route('/check').post(ctrl.apiPOST);
-
-    // var pid ="";
-    // request({
-    //     url: "https://westus.api.cognitive.microsoft.com/face/v1.0/detect",
-    //     method: "POST",
-    //     headers: {
-    //         'Content-Type': "application/json",
-    //         'Ocp-Apim-Subscription-Key': "580eb3f9f7f64f9aaf4afb69c25ffd40"
-    //     },
-    //     form: {
-    //         url:req.data.url
-    //     }
-    // }, function(error, response, body) {
-    //     pid = body.faceId;
-    //     res.send(pid);
-    //     console.log(body);
-    // });
+router.route('/detect').post(ctrl.apiPOST);
+router.route('/identify').post(ctrl.apiPOSTid);
 module.exports = router;
