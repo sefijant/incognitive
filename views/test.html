@@ -11,12 +11,22 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="/javascripts/test.js"></script>
         <script type="text/javascript" src="https://cdn.rawgit.com/jonashartmann/webcam-directive/master/dist/webcam.min.js"></script>
     </head>
-    <body>
+    <body style="background-color: burlywood;">
+        <nav>
+            <div class="nav-wrapper navbar-inverse teal lighten-2">
+                <a href="/err" class="brand-logo" style="margin-left: 2%; font-size: 3.1rem;">Incognitive</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/trump" style="font-size: large;">trump</a></li>
+                    <li><a href="/err" style="font-size: large;">err</a></li>
+                </ul>
+            </div>
+        </nav>
         <div ng-app="Incognitive">
             <div ng-controller="ctr">
                  <h3>Are You Trump?</h3>
