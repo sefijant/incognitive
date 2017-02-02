@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
   res.render('test.html');
 });
 //router.route('/detect').post(ctrl.apiPOST);
-router.post('/detect', function(req, res, next) {
-  res.send(req.params);
+router.post('/detect', function(req, res) {
+  res.send(req);
 });
 router.route('/identify').post(ctrl.apiPOSTid);
 module.exports = router;
