@@ -46,6 +46,15 @@
         <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
             <span>Webcam could not be started. Did you give access to it?</span>
         </div>
+        <nav>
+            <div class="nav-wrapper navbar-inverse teal lighten-2">
+                <a href="/err" class="brand-logo" style="margin-left: 2%; font-size: 3.1rem;">Incognitive</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/trump" style="font-size: large;">trump</a></li>
+                    <li><a href="/err" style="font-size: large;">err</a></li>
+                </ul>
+            </div>
+        </nav>
         <webcam channel="channel"
                 on-streaming="onSuccess()"
                 on-error="onError(err)"

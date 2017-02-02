@@ -1,7 +1,7 @@
 var app = angular.module('Incognitive', []);
 app.controller('ctr', function($scope, $http) {
     $scope.result = "";
-    $scope.imgInput="Enter URL";
+    $scope.imgInput="Enter image URL";
     $scope.doMagic=function() {
         $http({
             url: 'http://incognitive.azurewebsites.net/trump/detect',
@@ -18,7 +18,16 @@ app.controller('ctr', function($scope, $http) {
                 if(dt.data[0].candidates.length == 0){
                     $scope.result="You are not Trump";
                 } else {
-                    $scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
+                    $http({
+                        url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+                        method: "POST",
+                        headers: {'Ocp-Apim-Subscription-Key':'580eb3f9f7f64f9aaf4afb69c25ffd40'},
+                        data: { 'url' : $scope.imgInput }
+                    })
+                    .then(function(response) {
+                        $scope.result=response[0].scores;
+                    });
+                    //$scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                 }
             }, 
             function(dt) { // optional
