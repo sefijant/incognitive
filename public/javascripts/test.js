@@ -33,8 +33,8 @@ app.controller('ctr', function($scope, $http) {
 /////////////////////////////////////////////////////////////////////
 
 
-angular.module('myapp', ['webcam'])
-    .controller('mainController', function ($scope) {
+var app2=angular.module('myapp', ['webcam'])
+    app2.controller('mainController', function ($scope) {
         var _video = null,
             patData = null;
 
