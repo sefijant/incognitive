@@ -24,9 +24,19 @@ app.controller('ctr', function($scope, $http) {
                         data: { 'ur' : $scope.imgInput }
                     })
                     .then(function(response) {
-                        $scope.result=response;
+                        var respo = response.data[0].scores;
+                        var exp = "";
+                        if (respo.anger > 0.45) {
+                            exp = " angry ";
+                        } else if (respo.surprise > 0.4) {
+                            exp = " surprised ";
+                        } else if (respo.happiness > 0.45) {
+                            exp = " happy ";
+                        } else if (respo.sadness > 0.4) {
+                            exp = " sad ";
+                        }
+                        $scope.result="You are" + exp + "trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                     });
-                    //$scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                 }
             }, 
             function(dt) { // optional
