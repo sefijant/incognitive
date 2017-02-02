@@ -9,19 +9,21 @@ app.controller('ctr', function($scope, $http) {
             data: { 'ur' : $scope.imgInput }
         })
         .then(function(response) {
-            $scope.result = response.data;
+            $http({
+                url: 'http://incognitive.azurewebsites.net/trump/identify',
+                method: "POST",
+                data: { 'bdy':response }
+            })
+            .then(function(dt) {
+                $scope.result = dt.data;
+            }, 
+            function(dt) { // optional
+                $scope.result = "err2";
+            });
         }, 
         function(response) { // optional
             $scope.result = "err";
         });
-            var reqq = {
-                method: 'POST',
-                url: 'http://incognitive.azurewebsites.net/trump/identify',
-                data: { "bdy": bd }
-            }
-            $http(reqq).then(function(data){
-                $scope.result=data.data;
-            });
     };
 
 });
