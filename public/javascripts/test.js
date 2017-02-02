@@ -1,7 +1,7 @@
 var app = angular.module('Incognitive', []);
 app.controller('ctr', function($scope, $http) {
     $scope.result = "";
-    $scope.imgInput="Enter URL";
+    $scope.imgInput="Enter image URL";
     $scope.doMagic=function() {
         $http({
             url: 'http://incognitive.azurewebsites.net/trump/detect',
