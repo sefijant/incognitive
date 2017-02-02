@@ -43,7 +43,7 @@
         <div ng-app="myapp" ng-controller="mainController">
 
             <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
-                <span>Webcam could not be started. Did you give access to it?</span>
+                <span>Webcam could not be started. Did you give access to it?  {{webcamError}}</span>
             </div>
             <webcam channel="channel"
                     on-streaming="onSuccess()"
