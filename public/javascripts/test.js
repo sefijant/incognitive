@@ -27,15 +27,15 @@ app.controller('ctr', function($scope, $http) {
                         var respo = response.data[0].scores;
                         var exp = "";
                         if (respo.anger > 0.45) {
-                            exp = " angry ";
+                            exp = " angry";
                         } else if (respo.surprise > 0.4) {
-                            exp = " surprised ";
+                            exp = " surprised";
                         } else if (respo.happiness > 0.45) {
-                            exp = " happy ";
+                            exp = " happy";
                         } else if (respo.sadness > 0.4) {
-                            exp = " sad ";
+                            exp = " sad";
                         }
-                        $scope.result="You are" + exp + "trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
+                        $scope.result="You are" + exp + " trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                     });
                 }
             }, 
