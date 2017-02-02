@@ -15,7 +15,7 @@ app.controller('ctr', function($scope, $http) {
                 data: { "bdy": bd }
             }
             $http(reqq).then(function(data){
-            
+                $scope.result=data.data;
             });
         });
     };
