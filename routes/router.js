@@ -1,11 +1,18 @@
 ﻿angular.module('route', ['ngRoute']).config(function ($routeProvider, $locationProvider) {
     $routeProvider
+
+        // route for the home page
+        .when('/', {
+            templateUrl: 'views/home.html',
+            controller: 'mainCtrl'
+        })
+
         .when('/process', {
-            template: 'process.html',
+            template: 'views/process.html',
             controller: 'processCtrl'
         })
         .when('/err', {
-            template: 'error.html',
+            template: 'views/error.html',
             controller: 'errCtrl'
         })
         .otherwise({ redirectTo: '/' });
