@@ -9,18 +9,20 @@ app.controller('ctr', function($scope, $http) {
             data: { 'ur' : $scope.imgInput }
         })
         .then(function(response) {
-            $scope.result = response.data;
+            $http({
+                url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/identify',
+                method: "POST",
+                data: { 'personGroupId' : 'incognitive1', 'faceIds':[response],'confidenceThreshold': 0.6 }
+            })
+            .then(function(dt) {
+                $scope.result = dt.data;
+            }, 
+            function(dt) { // optional
+                $scope.result = "err2";
+            });
         }, 
         function(response) { // optional
             $scope.result = "err";
         });
-            var reqq = {
-                method: 'POST',
-                url: 'http://incognitive.azurewebsites.net/trump/identify',
-                data: { "bdy": bd }
-            }
-            $http(reqq).then(function(data){
-                $scope.result=data.data;
-            });
     };
 });
