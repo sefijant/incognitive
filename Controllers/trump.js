@@ -7,6 +7,6 @@ exports.apiPOST = function(req, res) {
     json:   true,
     body:    {"url":"http://cdn.thefederalist.com/wp-content/uploads/2015/06/Trump-Fox-998x624.jpg"}
     }, function(error, response, body){
-        res.send(body);
+        res.send(body[0].faceId);
     });
 };
