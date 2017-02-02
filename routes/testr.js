@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 });
 //router.route('/detect').post(ctrl.apiPOST);
 router.post('/detect', function(req, res) {
-  res.send("yO");
+  res.send(req.body);
 });
 router.route('/identify').post(ctrl.apiPOSTid);
 module.exports = router;
