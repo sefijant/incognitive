@@ -10,7 +10,7 @@ app.controller('ctr', function($scope, $http) {
         })
         .then(function(response) {
             $http({
-                url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/identify',
+                url: 'http://incognitive.azurewebsites.net/trump/identify',
                 method: "POST",
                 data: { 'bdy':response }
             })
