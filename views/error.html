@@ -36,7 +36,7 @@
 
     </style>
 
-    <title>Angular webcam directive demo by awolf2904</title>
+    <title>are you trump?</title>
 
 
 </head>
@@ -52,6 +52,7 @@
                 on-stream="onStream(stream)"></webcam>
         <button ng-click="makeSnapshot()">take picture</button>
         <canvas id="snapshot" width="300" height="300"></canvas>
+        {{result}}
     </div>
 
 
@@ -67,7 +68,7 @@ angular.module('myapp', ['webcam'])
         patData = null;
 
     $scope.patOpts = {x: 0, y: 0, w: 25, h: 25};
-
+  
     // Setup a channel to receive a video property
     // with a reference to the video element
     // See the HTML binding in main.html
@@ -112,6 +113,7 @@ angular.module('myapp', ['webcam'])
 
             patData = idata;
         }
+
     };
 
     /**
@@ -138,8 +140,34 @@ angular.module('myapp', ['webcam'])
      * In this example, we simply store it in the scope for display.
      */
     var sendSnapshotToServer = function sendSnapshotToServer(imgBase64) {
-        $scope.snapshotData = imgBase64;
-    };
+        $scope.imgInput = imgBase64;
+            $http({
+                url: 'http://incognitive.azurewebsites.net/trump/detect',
+                method: "POST",
+                data: { 'ur': $scope.imgInput }
+            })
+            .then(function (response) {
+                $http({
+                    url: 'http://incognitive.azurewebsites.net/trump/identify',
+                    method: "POST",
+                    data: { 'bdy': response }
+                })
+                .then(function (dt) {
+                    if (dt.data[0].candidates.length == 0) {
+                        $scope.result = "You are not Trump";
+                    } else {
+                        $scope.result = "You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
+                    }
+                },
+                function (dt) { // optional
+                    $scope.result = "err2";
+                });
+            },
+            function (response) { // optional
+                $scope.result = "err";
+            })
+        };
+   
 });
 //]]>
 
