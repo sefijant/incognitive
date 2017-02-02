@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 exports.apiPOST = function(req, res) {
-    var che = req.body;
+    res.send(req.body);
   request.post({
     headers: {'Content-Type': "application/json", 'Ocp-Apim-Subscription-Key': "580eb3f9f7f64f9aaf4afb69c25ffd40"},
     url:     'https://westus.api.cognitive.microsoft.com/face/v1.0/detect',

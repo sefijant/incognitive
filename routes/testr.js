@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-//   res.render('test.html');
-// });
+   res.render('test.html');
+});
 router.route('/detect').post(ctrl.apiPOST);
 // router.post('/detect', function(req, res) {
 //   res.send(req.body);
