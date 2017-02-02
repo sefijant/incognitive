@@ -6,7 +6,7 @@ app.controller('ctr', function($scope, $http) {
         $http({
             url: 'http://incognitive.azurewebsites.net/trump/detect',
             method: "POST",
-            data: { 'ur' : $scope.imgInput }
+            data: { 'ur' : 'check' }
         })
         .then(function(response) {
             $scope.result = response.data;
