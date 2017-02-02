@@ -15,10 +15,10 @@ app.controller('ctr', function($scope, $http) {
                 data: { 'bdy' : response }
             })
             .then(function(dt) {
-                if(dt.data[0].candidates == []){
-                    $scope.result("You are not Trump");
+                if((dt.data[0].candidates) == undefined){
+                    $scope.result="You are not Trump";
                 } else {
-                    $scope.result("You are trump. (" + dt.data[0].candidates[0].confidence + "%)")
+                    $scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 10 + "%)";
                 }
             }, 
             function(dt) { // optional
