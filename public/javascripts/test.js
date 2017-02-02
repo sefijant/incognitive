@@ -12,7 +12,7 @@ app.controller('ctr', function($scope, $http) {
             $http({
                 url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/identify',
                 method: "POST",
-                data: { 'personGroupId' : 'incognitive1', 'faceIds':[response],'confidenceThreshold': 0.6 }
+                data: { 'bdy':response }
             })
             .then(function(dt) {
                 $scope.result = dt.data;
