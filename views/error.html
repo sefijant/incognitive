@@ -1,7 +1,11 @@
-﻿<script>
-app.controller('errCtrl', function ($scope) {
-    $scope.message = "errCtrl";
+﻿<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
 
+    <script>
+        angular.module('myapp', ['webcam'])
+        .controller('mainController', function ($scope) {
             var _video = null,
                 patData = null;
 
@@ -79,17 +83,11 @@ app.controller('errCtrl', function ($scope) {
             var sendSnapshotToServer = function sendSnapshotToServer(imgBase64) {
                 $scope.snapshotData = imgBase64;
             };
-        
-
-
-
-
-
-
-});
-</script>
-
-<div ng-app="route" ng-controller="errCtrl">
+        });
+    </script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="mainController">
     <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
         <span>Webcam could not be started. Did you give access to it?</span>
     </div>
@@ -100,3 +98,6 @@ app.controller('errCtrl', function ($scope) {
     <button ng-click="makeSnapshot()">take picture</button>
     <canvas id="snapshot" width="300" height="300"></canvas>
 </div>
+
+</body>
+</html>
