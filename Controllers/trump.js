@@ -31,3 +31,14 @@ exports.apiPOSTid = function(req, res) {
         res.send(body);
     });
 };
+
+exports.apiPOSTemo = function(req, res) {
+  request.post({
+    headers: {'Content-Type': "application/json", 'Ocp-Apim-Subscription-Key': "e1b7c20639f74501affdb8d7c01bf264"},
+    url:     'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+    json:   true,
+    body:    {'url':req.body.ur}
+    }, function(error, response, body){
+        res.send(body);
+    });
+};

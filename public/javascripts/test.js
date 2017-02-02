@@ -19,10 +19,9 @@ app.controller('ctr', function($scope, $http) {
                     $scope.result="You are not Trump";
                 } else {
                     $http({
-                        url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+                        url: 'http://incognitive.azurewebsites.net/trump/emo',
                         method: "POST",
-                        headers: {'Ocp-Apim-Subscription-Key':'580eb3f9f7f64f9aaf4afb69c25ffd40'},
-                        data: { 'url' : $scope.imgInput }
+                        data: { 'ur' : $scope.imgInput }
                     })
                     .then(function(response) {
                         $scope.result=response[0].scores;
