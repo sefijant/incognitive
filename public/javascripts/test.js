@@ -5,9 +5,18 @@ app.controller('ctr', function($scope, $http) {
     $scope.doMagic=function() {
         var req = {
             method: 'POST',
-            url: 'http://incognitive.azurewebsites.net/trump/check',
-            data: { "url": $scope.imgInput }
+            url: 'http://incognitive.azurewebsites.net/trump/detect',
+            data: { "ur": $scope.imgInput }
         }
-        $http(req).then(function(data){$scope.result = data.data});
+        $http(req).then(function(bd){
+            var reqq = {
+                method: 'POST',
+                url: 'http://incognitive.azurewebsites.net/trump/identify',
+                data: { "bdy": bd }
+            }
+            $http(reqq).then(function(data){
+                $scope.result=data.data;
+            });
+        });
     };
 });
