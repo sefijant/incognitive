@@ -6,7 +6,8 @@ app.controller('ctr', function($scope, $http) {
         var req = {
             method: 'POST',
             url: 'http://incognitive.azurewebsites.net/trump/detect',
-            data: JSON.stringify({'ur':$scope.imgInput})
+            data: JSON.stringify({'ur':$scope.imgInput}),
+            headers: {'Content-Type': 'application/json'}
         }
         $http(req).then(function(bd){
             $scope.result = bd.data;
