@@ -18,7 +18,7 @@ app.controller('ctr', function($scope, $http) {
                 if(dt.data[0].candidates.length == 0){
                     $scope.result="You are not Trump";
                 } else {
-                    $scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 10 + "%)";
+                    $scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                 }
             }, 
             function(dt) { // optional
