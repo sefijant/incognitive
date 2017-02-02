@@ -3,13 +3,17 @@ app.controller('ctr', function($scope, $http) {
     $scope.result = "";
     $scope.imgInput="Enter URL";
     $scope.doMagic=function() {
-        var req = {
-            method: 'POST',
+        $http({
             url: 'http://incognitive.azurewebsites.net/trump/detect',
-            data: JSON.stringify({'ur':$scope.imgInput})
-        }
-        $http(req).then(function(bd){
-            $scope.result = bd.data;
+            method: "POST",
+            data: { 'ur' : 'check' }
+        })
+        .then(function(response) {
+            $scope.result = response.data;
+        }, 
+        function(response) { // optional
+            $scope.result = "err";
+        });
             // var reqq = {
             //     method: 'POST',
             //     url: 'http://incognitive.azurewebsites.net/trump/identify',
@@ -18,6 +22,5 @@ app.controller('ctr', function($scope, $http) {
             // $http(reqq).then(function(data){
             //     $scope.result=data.data;
             // });
-        });
     };
 });
