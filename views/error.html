@@ -57,13 +57,16 @@
                 </ul>
             </div>
         </nav>
+        <div>
             <webcam .col-md-4 channel="channel"
                     on-streaming="onSuccess()"
                     on-error="onError(err)"
                     on-stream="onStream(stream)" style="text-align: center; margin: 1%;"></webcam>
             <button ng-click="makeSnapshot(); $scope.result = 1">take picture</button>
             <canvas .col-md-4 id="snapshot" width="600" height="600"></canvas>
-            <h1>{{result}}</h1> 
+            <h1>{{result}}</h1>
+        </div>
+             
         
     </div>
 
@@ -79,7 +82,7 @@ angular.module('myapp', ['webcam'])
     var _video = null,
         patData = null;
     $scope.result = "0";
-    $scope.patOpts = {x: 0, y: 0, w: 50, h: 50};
+    $scope.patOpts = {x: 0, y: 0, w: 25, h: 25};
   
     // Setup a channel to receive a video property
     // with a reference to the video element
