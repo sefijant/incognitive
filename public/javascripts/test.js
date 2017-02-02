@@ -24,7 +24,7 @@ app.controller('ctr', function($scope, $http) {
                         data: { 'ur' : $scope.imgInput }
                     })
                     .then(function(response) {
-                        $scope.result=response[0].scores;
+                        $scope.result=response;
                     });
                     //$scope.result="You are trump. (" + dt.data[0].candidates[0].confidence * 100 + "%)";
                 }
