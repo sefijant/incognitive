@@ -16,6 +16,7 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
 
 
@@ -58,7 +59,7 @@
         <webcam channel="channel"
                 on-streaming="onSuccess()"
                 on-error="onError(err)"
-                on-stream="onStream(stream)"></webcam>
+                on-stream="onStream(stream)" style="text-align: center;"></webcam>
         <button ng-click="makeSnapshot()">take picture</button>
         <canvas id="snapshot" width="300" height="300"></canvas>
       <h1>{{result}}</h1> 
