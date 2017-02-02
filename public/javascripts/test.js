@@ -15,7 +15,7 @@ app.controller('ctr', function($scope, $http) {
                 data: { 'bdy' : response }
             })
             .then(function(dt) {
-                $scope.result = dt.data.faceid;
+                $scope.result = dt.data[0];
             }, 
             function(dt) { // optional
                 $scope.result = "err2";
