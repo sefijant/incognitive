@@ -8,6 +8,9 @@ var ctrl = require('../controllers/trump');
 router.get('/', function(req, res, next) {
   res.render('test.html');
 });
-router.route('/detect').post(ctrl.apiPOST);
+//router.route('/detect').post(ctrl.apiPOST);
+router.post('detect', function(req, res, next) {
+  res.send(req.params);
+});
 router.route('/identify').post(ctrl.apiPOSTid);
 module.exports = router;
