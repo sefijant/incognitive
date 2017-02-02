@@ -25,7 +25,7 @@ exports.apiPOSTid = function(req, res) {
     headers: {'Content-Type': "application/json", 'Ocp-Apim-Subscription-Key': "580eb3f9f7f64f9aaf4afb69c25ffd40"},
     url:     'https://westus.api.cognitive.microsoft.com/face/v1.0/identify',
     json:   true,
-    body:    {"personGroupId":"incognitive1", "faceIds":[req.params.bdy], "confidenceThreshold": 0.6}
+    body:    {"personGroupId":"incognitive1", "faceIds":['050012d7-67a2-4dd8-acd1-6b9819da2a02'], "confidenceThreshold": 0.6}
     }, function(error, response, body){
         res.send(body);
     });
