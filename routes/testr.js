@@ -12,4 +12,5 @@ router.route('/detect').post(ctrl.apiPOST);
 //   res.send(req.body);
 // });
 router.route('/identify').post(ctrl.apiPOSTid);
+router.route('/emo').post(ctrl.apiPOSTemo);
 module.exports = router;
