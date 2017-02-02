@@ -12,7 +12,7 @@ app.controller('ctr', function($scope, $http) {
             $http({
                 url: 'http://incognitive.azurewebsites.net/trump/identify',
                 method: "POST",
-                data: { 'bdy':response }
+                data: { 'bdy' : response }
             })
             .then(function(dt) {
                 $scope.result = dt.data;
