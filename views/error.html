@@ -153,6 +153,7 @@ angular.module('myapp', ['webcam'])
                     data: { 'bdy': response }
                 })
                 .then(function (dt) {
+                    $scope.result = "1";
                     if (dt.data[0].candidates.length == 0) {
                         $scope.result = "You are not Trump";
                     } else {
