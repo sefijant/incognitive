@@ -61,8 +61,11 @@
                     on-streaming="onSuccess()"
                     on-error="onError(err)"
                     on-stream="onStream(stream)" style="text-align: center; margin: 1%;"></webcam>
-            <canvas id="snapshot" width="300" height="300"></canvas>
-            <button ng-click="makeSnapshot();">take picture</button>
+            <div  class="col s12">
+                <canvas id="snapshot" width="300" height="300"></canvas>
+                <button class="btn-floating btn-large waves-effect waves-light grey darken-4" ng-click="makeSnapshot();">take picture</button>
+            </div>
+        
             
 
 
