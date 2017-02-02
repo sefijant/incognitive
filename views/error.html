@@ -16,6 +16,7 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
 
 
@@ -46,10 +47,19 @@
         <div class="alert alert-error ng-scope" ng-show="webcamError" style="">
             <span>Webcam could not be started. Did you give access to it?</span>
         </div>
+        <nav>
+            <div class="nav-wrapper navbar-inverse teal lighten-2">
+                <a href="/err" class="brand-logo" style="margin-left: 2%; font-size: 3.1rem;">Incognitive</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/trump" style="font-size: large;">trump</a></li>
+                    <li><a href="/err" style="font-size: large;">err</a></li>
+                </ul>
+            </div>
+        </nav>
         <webcam channel="channel"
                 on-streaming="onSuccess()"
                 on-error="onError(err)"
-                on-stream="onStream(stream)"></webcam>
+                on-stream="onStream(stream)" style="text-align: center;"></webcam>
         <button ng-click="makeSnapshot()">take picture</button>
         <canvas id="snapshot" width="300" height="300"></canvas>
       <h1>{{result}}</h1> 
