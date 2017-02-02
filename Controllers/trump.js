@@ -1,13 +1,13 @@
 var express = require('express');
 var request = require('request');
-var app = express();
-var bodyParser = require('body-parser');
+// var app = express();
+// var bodyParser = require('body-parser');
 
-// configure the app to use bodyParser()
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
+// // configure the app to use bodyParser()
+// app.use(bodyParser.urlencoded({
+//     extended: true
+// }));
+// app.use(bodyParser.json());
 
 exports.apiPOST = function(req, res) {
     res.send(req.body);
