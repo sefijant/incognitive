@@ -145,15 +145,6 @@ angular.module('myapp', ['webcam'])
 
     </script>
 
-    <script>
-  // tell the embed parent frame the height of the content
-  if (window.parent && window.parent.parent){
-    window.parent.parent.postMessage(["resultsFrame", {
-      height: document.body.getBoundingClientRect().height,
-      slug: "qww6g0a6"
-    }], "*")
-  }
-    </script>
 
 </body>
 
