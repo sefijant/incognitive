@@ -21,6 +21,7 @@ app.controller('ctr', function($scope, $http) {
                     $http({
                         url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
                         method: "POST",
+                        headers: {'Ocp-Apim-Subscription-Key':'580eb3f9f7f64f9aaf4afb69c25ffd40'},
                         data: { 'url' : $scope.imgInput }
                     })
                     .then(function(response) {
