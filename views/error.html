@@ -57,7 +57,6 @@
                 </ul>
             </div>
         </nav>
-        <div>
             <webcam .col-md-4 channel="channel"
                     on-streaming="onSuccess()"
                     on-error="onError(err)"
@@ -65,9 +64,6 @@
             <button ng-click="makeSnapshot(); $scope.result = 1">take picture</button>
             <canvas .col-md-4 id="snapshot" width="600" height="600"></canvas>
             <h1>{{result}}</h1>
-        </div>
-             
-        
     </div>
 
 
