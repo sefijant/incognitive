@@ -15,9 +15,9 @@ app.use(bodyParser.json());
 router.get('/', function(req, res, next) {
 //   res.render('test.html');
 // });
-//router.route('/detect').post(ctrl.apiPOST);
-router.post('/detect', function(req, res) {
-  res.send(req.body);
-});
+router.route('/detect').post(ctrl.apiPOST);
+// router.post('/detect', function(req, res) {
+//   res.send(req.body);
+// });
 router.route('/identify').post(ctrl.apiPOSTid);
 module.exports = router;

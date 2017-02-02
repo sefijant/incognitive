@@ -1,7 +1,16 @@
+var express = require('express');
 var request = require('request');
+var app = express();
+var bodyParser = require('body-parser');
+
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
 exports.apiPOST = function(req, res) {
-    var che = req.params;
+    var che = req.body;
   request.post({
     headers: {'Content-Type': "application/json", 'Ocp-Apim-Subscription-Key': "580eb3f9f7f64f9aaf4afb69c25ffd40"},
     url:     'https://westus.api.cognitive.microsoft.com/face/v1.0/detect',
