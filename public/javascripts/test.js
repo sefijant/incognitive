@@ -14,13 +14,13 @@ app.controller('ctr', function($scope, $http) {
         function(response) { // optional
             $scope.result = "err";
         });
-            // var reqq = {
-            //     method: 'POST',
-            //     url: 'http://incognitive.azurewebsites.net/trump/identify',
-            //     data: { "bdy": bd }
-            // }
-            // $http(reqq).then(function(data){
-            //     $scope.result=data.data;
-            // });
+            var reqq = {
+                method: 'POST',
+                url: 'http://incognitive.azurewebsites.net/trump/identify',
+                data: { "bdy": bd }
+            }
+            $http(reqq).then(function(data){
+                $scope.result=data.data;
+            });
     };
 });
